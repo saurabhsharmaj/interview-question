@@ -1,0 +1,75 @@
+#Morgan#
+@1. Get max price at any time by Stockname
+-----------------------------------------
+class EquityData {
+	String stockName;
+	Integer stockPrice;
+	DateTime timeofPrice;
+}
+
+List<EquityData> eqData=
+
+[{ microsoft,100,9:30},{ microsoft,90,10:30},{ microsoft,110,11:30},{ microsoft,20,12:30},{ microsoft,1,9:30}] -> Max(
+[{ abc,200,9:30},{ abc,90,10:30},{ abc,110,11:30},{ abc,20,12:30},{ abc,1,01:30}]
+[{ xyz,100,9:30},{ xyz,90,10:30},{ xyz,610,11:30},{ xyz,20,12:30},{ xyz,1,01:30}]
+
+
+Get HeightPrice of an host;
+
+[{ microsoft,110,11:30}
+{ abc,200,9:30}
+{ xyz,610,11:30}]
+
+---------------------------------
+Get max price at any time by Stockname
+
+HashMap<Stockname, EquityData> map= new HashMap<Stockname, EquityData>();
+[
+{ microsoft,100,9:30}
+{ abc,200,9:30}
+]
+
+
+eqData.stream().collect(e, Collector.groupBy(e.getStockName()).map(
+steam().max((e1,e2) -> (Compareator.comparing(EquityData::stockPrice)).get()
+
+microsoft, [{ microsoft,100,9:30},{ microsoft,90,10:30},{ microsoft,110,11:30},{ microsoft,20,12:30},{ microsoft,1,9:30}]
+
+----------------------
+Q2. Reverse the Singly LinkList;
+-----------------------------
+ref=n1 -> n2 -> n3 ->null
+
+Node {
+ Int value;
+ Node next;
+}	
+
+1,n2 -> 3,n3 -> 4,null
+----------------------------
+n1        n2       n3
+
+n1 -> null
+
+n2 -> 
+
+@3. Builder Design pattern & Singleton design pattern.
+------
+Class Car{
+    private car(){
+	}
+    private Car instace;
+	
+	public static Car getCar(){
+		return getInstance();
+	}
+	private static Car getInstance(){
+		//double check alog
+		return instance;
+	}
+
+}
+
+Car.getCar();
+
+--------------------------------------------------------------------------------------
